@@ -1,8 +1,28 @@
 source 'https://rubygems.org'
 
 
+gem 'bootstrap-sass', '~> 3.3.7'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.11'
+gem 'faker', '~> 1.6.3'
+gem 'rails_admin', '~> 0.8.1'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
+# for download
+gem 'paperclip'
+
+# for seed
+#gem 'faker', '~> 1.6.3'
+
+# for chat room
+gem 'faye'
+gem 'thin', require: false
+gem 'responders', '~> 2.0'
+gem 'render_sync'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.5.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -45,3 +65,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'simple_form'

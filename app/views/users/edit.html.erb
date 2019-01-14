@@ -1,0 +1,19 @@
+<div class="modal-body" style="padding:10px 120px;">
+ <div class="row">
+    <div class="col-lg-12">
+      <div class="alert alert-info">
+<h3>用户修改</h3>
+<%= simple_form_for(@user, as: :user, method: :patch, url: user_path(@user)) do |f| %>
+  <%= f.input :name, label: '昵称：' %>
+  <%= f.input :email, label: '邮箱：' %>
+  <%= f.input :password, label: '密码：' %>
+  <%= f.input :phonenumber, label: '电话：' %>
+  <%= f.input :sex, label: '性别：', collection: [['男', 'male'], ['女', 'female']], :include_blank => false %>
+  <%= f.button :submit, '更新信息', class: "btn btn-large btn-primary"%>
+<% end %>
+    
+      </div>
+    </div>
+  </div>
+</div>
+

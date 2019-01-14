@@ -1,0 +1,54 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      
+      <%= link_to root_path, class: 'navbar-brand', style: "color:white" do %>
+          <i class="glyphicon glyphicon-globe" aria-hidden="true"></i> 果壳树洞！&nbsp;&nbsp;&nbsp;A simple chat tool！
+      <% end %>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+
+      <% if current_user %>
+
+          <li>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#search_messages">
+              搜索
+            </button>
+          </li>
+          <li>
+            <%= link_to chats_path, class: "dropbtn" do %>
+                使用说明  <i class="glyphicon glyphicon-hand-left"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to chats_path, class: "dropbtn" do %>
+                聊天房间  <i class="glyphicon glyphicon-home"></i>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to user_path(current_user), class: "dropbtn" do %>
+                <%= current_user.name %> <span class="glyphicon glyphicon-user"></span>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to sessions_logout_path, method: :delete, class: "dropbtn" do %>
+                退出 <span class="	glyphicon glyphicon-off"></span>
+            <% end %>
+          </li>
+
+      <% end %>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<%= render 'layouts/login_panel' %>
+<%= render "layouts/search_messages" %>
+
+
+
+

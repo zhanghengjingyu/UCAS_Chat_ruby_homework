@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friendships
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +54,46 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :users do
+    collection do
+      get :index_json
+    end
+  end
+  resources :salaries
+  resources :performances
+  resources :announcements
+  resources :materials
+  resources :articles
+  resources :departments
+  resources :companynews
+  resources :vacation
+
+  resources :messages do
+    collection do
+      delete :destroyall
+      get :index_json
+    end
+  end
+
+  resources :chats do
+    member do
+      patch :trans_auth
+      post :add_user
+      delete :delete_user
+    end
+  end
+
+  resources :friendships do
+    member do
+      post :create
+    end
+  end
+
+  root 'homes#home'
+
+  get 'sessions/login' => 'sessions#new'
+  post 'sessions/login' => 'sessions#create'
+  delete 'sessions/logout' => 'sessions#destroy'
+
 end

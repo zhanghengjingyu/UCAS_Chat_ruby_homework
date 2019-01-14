@@ -1,0 +1,43 @@
+<li class="mar-btm">
+  <div class="media-<%= current_user.id==message.user.id ? 'right' : 'left' %>" >
+    <%= image_tag "head4.jpg", class: "img-sm" %>
+  </div>
+  <div class="media-body pad-hor <%= "speech-right" if current_user.id==message.user.id %>" >
+    <div class="speech">
+      <button class="btn btn-default btn-block" data-toggle="collapse" data-target="#message-<%= message.id %>" id="tab-contact-default"  style: "width:100px;">
+        <p class="media-heading"><%= current_user.id==message.user.id ? '我' : message.user.name %>
+          <text class="speech-time">
+            <!--<i class="fa fa-clock-o fa-fw"></i>-->
+            <%= message.created_at.to_formatted_s(:db) %>
+          </text>
+        </p>
+        <p style="margin-bottom: 5px; margin-top: 5px;"><%= message.body %></p>
+      </button>
+
+      <div id="message-<%= message.id %>" class="collapse">
+        
+        <div class="<%= current_user.id==message.user.id ? '' : 'hide' %>">
+        <%= link_to message_path(id: message.id, chat_room: @chat.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-info btn-block', role: "button", style: "margin-bottom: 2px; margin-top: 2px; margin-left: 2px; margin-right:2px;"  do %>
+        <i class="fa fa-angle-right"></i> 撤回消息
+        <% end %>
+        </div>
+
+        <button type="button" class="btn btn-info btn-block" style: "margin-bottom: 2px; margin-top: 2px; margin-left: 3px; margin-right:2px;" data-toggle="modal" data-target="#chatroom_list" data-messagebody="<%= message.body %>">
+          <i class="fa fa-angle-right"></i> 转发消息
+        </button>
+        <%= link_to message_path(id: message.id, chat_room: @chat.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-info btn-block', role: "button", style: "margin-bottom: 2px; margin-top: 2px; margin-left: 2px; margin-right:2px;" do %>
+        <i class="fa fa-angle-right"></i> 删除消息
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</li>
+
+<%= render "chatroom_list" %>
+
+<script>
+  var $cont = $('.nano-content');
+  $cont[0].scrollTop = $cont[0].scrollHeight;
+</script>
+

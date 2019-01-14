@@ -1,0 +1,27 @@
+
+<div class="modal-body" style="padding:10px 120px;">
+ <div class="row">
+    <div class="col-lg-12">
+      <div class="alert alert-info">
+   <ul>
+    <br>
+    <h2>个人信息</h2>
+  	<br>
+    <h4>昵称： <%= @user.name %></h4>
+    <br>
+    <h4>邮箱： <%= @user.email %></h4>
+    <br>
+    <h4>电话： <%= @user.phonenumber %></h4>
+    <br>
+    <h4>性别： <%= @user.sex %></h4>
+	  <br>
+	  <br>
+    <h4><%= link_to '修改信息',edit_user_path(@user), class: "btn btn-large btn-primary"  %></h4>
+  </ul>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+

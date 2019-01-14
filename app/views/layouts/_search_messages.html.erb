@@ -1,0 +1,70 @@
+<!-- Modal -->
+<div id="search_messages" class="modal fade" role="dialog">
+  <div class="modal-dialog" >
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">搜索历史聊天消息</h4>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-incline" id="search-messages">
+
+          <div class="input-group">
+            
+            <%= text_field_tag :query, params[:query], placeholder: "搜索聊天消息", class: 'form-control' %>
+            <span class="input-group-btn">
+                    <button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+          </div>
+        </form>
+        <hr>
+
+        <table class="table table-striped table-hover" id="result-messages">
+          <thead>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script>
+    $('#search-messages').submit(function () {
+        var valuesToSubmit = $(this).serialize();
+        $.ajax({
+            type: 'GET',
+            url: '/messages/index_json',
+            dataType: "JSON",
+            data: valuesToSubmit,
+            success: function (data) {
+                $('#result-messages tr').remove();
+                $('#result-messages text').remove();
+
+                if (data != "") {
+                    $('#result-messages thead').html("<tr><th>消息内容</th><th>房间号</th></tr>");
+                    $.each(data, function (index, message) {
+                        $('#result-messages tbody').append("<tr><td>" + message.body + "</td><td>" + message.chat_id + "</td><td><a class='btn default btn-xs' data-method='get' href='/chats/" + message.chat_id + "'>进入房间</a></td></tr>");
+
+                    });
+                } else {
+                    $('#result-messages tbody').append("<text>没有找到符合条件的消息</text>")
+                }
+
+            }, error: function () {
+                alert('error in post');
+            }
+        });
+        return false;
+    });
+
+</script>

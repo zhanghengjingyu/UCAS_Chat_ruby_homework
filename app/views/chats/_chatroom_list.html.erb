@@ -1,0 +1,46 @@
+<!-- Modal -->
+<div id="chatroom_list" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">转发消息</h4>
+      </div>
+      <div class="modal-body">
+
+        
+
+        <% current_user.chats.each do |chatroom| %>
+
+            <i class="fa fa-wechat fa-5"></i> <%= truncate(chatroom.name, length: 30) %>
+            <text id="chatroom-<%= chatroom.id %>"></text>
+
+            <%= form_for @new_message, remote: true do |f| %>
+              <%= f.text_field :body, class: "form-control input-sm messagebody" %>
+              <%= hidden_field_tag :chat_room, chatroom.id %>
+              <span class="input-group-btn"> <%= f.submit "发送", class: "btn btn-warning btn-sm" %> </span>
+            <% end %>
+
+        <% end %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+    $('#chatroom_list').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // 触发事件的按钮
+        var body = button.data('messagebody') // 解析出data-whatever内容
+        var modal = $(this)
+        modal.find('.messagebody').val(body)
+    })
+</script>

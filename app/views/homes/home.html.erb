@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <header class="jumbotron hero-spacer home-index-nav-background" >
+   </header>
+  <header class="jumbotron hero-spacer">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="alert alert-info text-center">
+     
+        欢迎来到果壳树洞！&nbsp;&nbsp;&nbsp;This is A convenient Chat tool！（可以使用用户名user1@test.com,密码：password）
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+      <% if current_user %>
+          Hello! <%= current_user.name %>
+      <% else %>
+          <a href="#" class="btn btn-primary btn-large" id="login_panel"> Log in!</a>
+      <% end %>
+    
+      </div>
+    </div>
+  </div>
+     <!--<%= image_tag "user-icon.png", class: "img-sm" %>-->
+  </header>
+
+  <hr>
+  <hr>
+</div>

@@ -1,24 +1,49 @@
+# 果壳树洞-RailsChat 
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+果壳树洞-RailsChat是基于ruby on rails开发的在线实时的Web聊天软件。本软件是在[Render_sync](https://github.com/chrismccord/render_sync)的基础上完善开发完成的。
+## 目前功能
+### 用户功能：
+* 可以通过右上角图标来管理用户的个人信息，同时可以查看、修改自己的用户信息；
+
+### 聊天功能：
+* 在左侧四大功能模块中，可以查看好友列表，点击好友可以查看好友信息、发起聊天、删除好友等；聊天房间功能显示当前所有的聊天房间；好友申请功能为别人想要添加自己为好友，点击之后选择同意或者不同意；等待信息为添加别人，等待别人同意，也可撤回好友申请；
+            
+
+### 机器人功能：
+* 在好友列表机器人中，通过添加好友robot，可以和机器人在线聊天；user1用户已经添加robot用户，在好友列表中可以看到；
+           
+
+### 查找功能：
+* 可以通过左下角添加朋友按钮添加朋友，然后点击搜索（不输入内容）可以查看所有的好友，同时可以通过用户名查找，进行添加；可以通过右上角搜索按钮查找历史信息，点击搜索（不输入内容）会显示所有的聊天记录，同时可以通过关键字查找； 
 
 
-Welcome to your Rails project on Cloud9 IDE!
+### 聊天管理功能：
+*  在选择一个好友点击发起聊天，然后点击已经发送的一条信息，可以进行撤回消息，转发消息，删除消息三个功能；在右侧房间管理功能中，有添加当前聊天会话的用户人数，并可以修改房间名，转移房间的所有权权限；
 
-To get started, just do the following:
+## 截图
+![Image text](/app/assets/images/1.png)
+![Image text](/app/assets/images/2.png)
+![Image text](/app/assets/images/3.png)
+![Image text](/app/assets/images/robot.png)
+![Image text](/app/assets/images/user-message.png)
+![Image text](/app/assets/images/6.png)
+![Image text](/app/assets/images/4.png)
+![Image text](/app/assets/images/5.png)
+![Image text](/app/assets/images/7.png)
+![Image text](/app/assets/images/8.png)
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://HOSTNAME/).
 
-Happy coding!
-The Cloud9 IDE team
+请点击[这里](http://139.129.209.63:44400/)访问Demo，测试用户登陆账号格式为：
+
+```
+username: user<number>@test.com
+password: password
+```
+
+* 其中number为1到20，代表20个用户，例如使用`user1@test.com`和`password`能登陆用户1，以此类推
+
+Note：请用两个浏览器分别登陆不同的用户来测试消息的即使推送，注意这两个用户需要互为好友
 
 
-## Support & Documentation
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+

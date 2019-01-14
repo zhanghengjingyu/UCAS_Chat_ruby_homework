@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'homes';
+@import 'font-awesome';
+@import 'announcements';
+@import 'chats';
+@import 'select2.min';
+@import 'toastr.min';
+
+.table {
+  margin-bottom: 10px;
+}
+
+.table-striped > tbody > tr:hover > td.has_hover {
+  background-color: #C0C0C0;
+}
+
+footer {
+  background-color: #555;
+  color: white;
+  padding: 10px;
+}
+
+.body-background {
+  //background-image: image-url('background.jpg');
+  //background-color: #DADADA;
+  //background-repeat: no-repeat;
+  //background-size: 100% 100%;
+}
+
+body {//修改部分
+  padding-top: 50px;
+  //background-image: url("pict2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+
+.home-index-nav-background {
+
+ background-image: url("index_nav_bg.jpg");
+ // background-image: url("pict3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 450px;
+  //margin-top:0px;
+  //margin-bottom:0px;
+  //margin-right:0px;
+  //margin-left:0px;这些都是可以用的
+}
+
+
+
+
+html {
+  height: 100%;
+}
+
+
+
+
+
+
+

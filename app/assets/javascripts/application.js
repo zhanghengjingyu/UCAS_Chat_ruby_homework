@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require bootstrap.min
+//= require bootstrap.file-input
+//= require sync
+//= require select2.min
+//= require toastr.min
