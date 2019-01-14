@@ -33,7 +33,7 @@
 ![Image text](/app/assets/images/8.png)
 
 ## 三、系统测试用户
-请点击[这里](http://139.129.209.63:44400/)访问ucaschat系统，系统测试测试用户登陆账号格式为：
+请点击[这里-ucaschat](http://39.106.148.76:3000/)访问ucaschat系统，系统测试测试用户登陆账号格式为：
 
 ```
 username: user1@test.com
@@ -44,19 +44,19 @@ password: password
 ## 四、UserStory
 ![Image text](/app/assets/images/userstory.jpg)
 ## 五、系统启动
-1. Fork项目
+1. Fork项目然后启动服务器
 
   ```
   git clone https://github.com/zhanghengjingyu/UCAS_Chat_ruby_homework.git
   cd UCAS_Chat_ruby_homework
   bundle install
-  rails server
+  rails server -b 0.0.0.0 -d
   ```
 
 2. 然后再打开另外一个终端，运行以下命令启动另外一个server来监听聊天室的用户并实时推送最新的消息：
 
   ```
-  rackup sync.ru -E production
+  bundle exec rackup sync.ru -E production --host 0.0.0.0 -D
   ```
 
 
