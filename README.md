@@ -32,17 +32,15 @@
 ![Image text](/app/assets/images/7.png)
 ![Image text](/app/assets/images/8.png)
 
-
-请点击[这里](http://139.129.209.63:44400/)访问Demo，测试用户登陆账号格式为：
+#### 系统测试用户
+请点击[这里](http://139.129.209.63:44400/)访问ucaschat系统，系统测试测试用户登陆账号格式为：
 
 ```
-username: user<number>@test.com
+username: user1@test.com
 password: password
 ```
 
-* 其中number为1到20，代表20个用户，例如使用`user1@test.com`和`password`能登陆用户1，以此类推
-
-Note：请用两个浏览器分别登陆不同的用户来测试消息的即使推送，注意这两个用户需要互为好友
+* 在系统中已经注册好100个用户，分别是user1@test.com,user2@test.com,user3@test.com...等，密码全都是password；robot机器人是默认用户，每个普通用户可以搜索robot来自动添加好友，在添加好友中可以通过查询用户名比如user2，或者直接不输入，点击搜索会显示所有的用户；可以通过两个浏览器分别登陆不同的用户来测试消息的即使推送，注意这两个用户需要互为好友。
 
 
 
