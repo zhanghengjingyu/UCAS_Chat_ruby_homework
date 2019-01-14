@@ -42,7 +42,7 @@ password: password
 
 * 在系统中已经注册好100个用户，分别是user1@test.com,user2@test.com,user3@test.com...等，密码全都是password；robot机器人是默认用户，每个普通用户可以搜索robot来自动添加好友，在添加好友中可以通过查询用户名比如user2，或者直接不输入，点击搜索会显示所有的用户；可以通过两个浏览器分别登陆不同的用户来测试消息的即使推送，注意这两个用户需要互为好友。
 ## 四、UserStory
-
+![Image text](/app/assets/images/userstory.jpg)
 ## 五、系统启动
 1. Fork项目
 
